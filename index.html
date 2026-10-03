@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#152c3b">
+<title>Planspiel – VU bei Bichl</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#183344;background:#eef2f4;font-size:15px}/* Prevent double-tap zoom in Safari while preserving scrolling and pinch zoom. */
+*{box-sizing:border-box;touch-action:manipulation}body{margin:0}button,input{font:inherit}button{cursor:pointer;min-height:44px;border:1px solid #bac9d1;border-radius:9px;background:white;color:#183344;padding:9px 13px;font-weight:600}button:hover{background:#e8f1f6}button:focus-visible,input:focus-visible{outline:3px solid #e9a52c;outline-offset:2px}button:disabled{opacity:.4;cursor:default}header{background:#152c3b;color:white;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}h1{font-size:21px;margin:0 0 4px}header p{margin:0;color:#b9ceda;font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap}.primary{background:#def0ec}.danger{color:#ac2931}main{display:grid;grid-template-columns:minmax(0,1fr) 310px;height:calc(100dvh - 99px);min-height:550px}.workspace{min-width:0;display:flex;flex-direction:column;padding:16px;gap:12px}.mapbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.mapbar label{display:flex;align-items:center;gap:8px}.mapbar input{width:125px;min-height:44px}.hint{font-size:13px;color:#526b79}.viewport{flex:1;min-height:250px;overflow:auto;background:#d9e2e7;border:1px solid #bbcbd4;border-radius:12px;position:relative;overscroll-behavior:contain}.stage{position:relative;width:100%;isolation:isolate;min-width:100%}.base-map{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}.overlay{position:absolute;inset:0;overflow:hidden}.object{position:absolute;width:12%;padding:0;border:0;min-height:0;border-radius:0;background:transparent;transform:translate(-50%,-50%);touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;z-index:1}.object:hover{background:transparent}.object.selected{z-index:2}.art{display:block;position:relative;width:100%;transform:rotate(var(--rotation));transform-origin:center;border:2px solid transparent;border-radius:8px}.selected .art{border-color:#087da7;background:#ffffff55;box-shadow:0 0 0 2px white}.art img,.art svg{display:block;width:100%;height:auto;pointer-events:none}.object-label{display:block;width:max-content;max-width:220%;position:absolute;top:100%;left:50%;transform:translateX(-50%);font-size:clamp(11px,1.1vw,16px);line-height:1.25;background:#fffffff0;border:1px solid #aabcc5;border-radius:4px;padding:3px 6px;overflow-wrap:anywhere;white-space:pre-wrap;margin-top:3px;pointer-events:none}.object-label:empty{display:none}aside{background:#fff;border-left:1px solid #cfdae0;display:flex;flex-direction:column;min-height:0}.tabs{display:flex;padding:14px 12px 8px;gap:6px}.tabs button{flex:1;font-size:13px}.tabs button[aria-selected=true]{background:#173d52;color:white;border-color:#173d52}.palette{overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y pinch-zoom;flex:1 1 0;min-height:140px;padding:8px 12px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-auto-rows:max-content;gap:8px;align-content:start}.vehicle-folder{grid-column:1 / -1;min-width:0;align-self:start;border:1px solid #cbd7df;border-radius:9px;background:#f5f8fa}.vehicle-folder summary{min-height:48px;padding:13px 10px;cursor:pointer;font-size:14px;font-weight:700;border-left:4px solid var(--group-color);touch-action:manipulation}.vehicle-folder summary:hover{background:#e8f1f6}.vehicle-folder summary:focus-visible{outline:3px solid #e9a52c;outline-offset:-3px}.vehicle-folder[open] summary{border-bottom:1px solid #d5dfe5}.folder-count{font-size:12px;font-weight:400;color:#526b79;margin-left:5px}.folder-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px}@media(max-width:600px){.folder-items{grid-template-columns:repeat(3,minmax(0,1fr))}}.palette button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12px;min-height:105px;padding:8px}.palette img,.palette svg{width:82px;height:56px;object-fit:contain;pointer-events:none}.palette small{font-size:10px;color:#9d3a2b}.editor{padding:14px;border-top:1px solid #d5dfe5;background:#f5f8fa;overflow:auto;max-height:52%}.editor h2{font-size:15px;margin:0 0 8px}.editor label{display:block;font-size:13px}.editor input{width:100%;min-height:44px;border:1px solid #bac9d1;border-radius:8px;margin:6px 0 10px;padding:9px}.editor fieldset{border:0;padding:0;margin:0;min-width:0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:7px}.editor .hint{margin:8px 0 0}.status{min-height:20px;font-size:12px;color:#526b79}.error{padding:24px;color:#922a22;background:#fff1e9;line-height:1.6}.empty-note{font-size:13px;padding:0 14px 8px;color:#526b79}footer{font-size:11px;color:#718692;padding:8px 14px}.dragging{cursor:grabbing}.mapbar strong{font-size:14px}@media(max-width:900px){main{grid-template-columns:minmax(0,1fr) 255px}.workspace{padding:10px}.tabs{padding:10px 8px 6px}.tabs button{padding:8px 6px}header{padding:12px 16px}.palette{padding:8px}.editor{padding:10px}}@media(max-width:600px){main{display:flex;flex-direction:column;height:auto;min-height:0}.workspace{height:62dvh;min-height:340px}aside{border-left:0;border-top:1px solid #cfdae0}.palette{max-height:255px;grid-template-columns:repeat(3,1fr);flex:auto}.editor{max-height:none}header h1{font-size:18px}.actions button{font-size:12px;padding:8px}footer{padding-bottom:max(10px,env(safe-area-inset-bottom))}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s}}
+/* A dedicated bottom row keeps map navigation visible without covering controls. */
+body{height:100dvh;display:flex;flex-direction:column;overflow:hidden}header{flex-shrink:0}main{height:auto;min-height:0;flex:1;overflow:hidden}.workspace{min-height:0}.viewport{min-height:100px}.map-navigation{flex-shrink:0;display:flex;gap:8px;align-items:center;padding:10px 16px max(10px,env(safe-area-inset-bottom));background:#152c3b;color:white;overflow-x:auto;overscroll-behavior-x:contain}.map-navigation span{font-size:13px;white-space:nowrap}.map-navigation button{white-space:nowrap;flex-shrink:0}.map-navigation button[aria-pressed=true]{background:#bce7dc;border-color:#bce7dc}.map-navigation button:disabled{opacity:1}.map-loading{padding:24px;color:#526b79}
+@media(max-width:600px){main{display:block;overflow-y:auto;overscroll-behavior-y:contain}.workspace{height:60dvh;min-height:340px}.map-navigation{padding-left:10px;padding-right:10px}.map-navigation span{display:none}}
+</style>
+</head>
+<body>
+<header><div><h1>Planspiel – VU bei Bichl</h1><p>Verkehrsunfall · B 11 / B 472 · Lage darstellen und gemeinsam besprechen</p></div><div class="actions"><button id="export" class="primary">↓ Lage speichern</button><button id="import">↑ Lage laden</button><button id="reset" class="danger">Lage zurücksetzen</button><input type="file" id="file" accept=".json,application/json" hidden></div></header>
+<main><section class="workspace" aria-label="Lagekarte"><div class="mapbar"><strong id="count">0 Objekte</strong><label>Ansicht <input id="zoom" type="range" min="100" max="250" step="25" value="100" aria-label="Kartenansicht vergrößern"><output id="zoomvalue">100 %</output></label></div><div class="viewport" id="viewport"><div class="stage" id="stage"><img class="base-map" id="map" src="Lagekarte.png" alt="Planspiel-Karte VU_Bichl" draggable="false"><div class="overlay" id="overlay"></div></div><div class="error" id="maperror" hidden>Die Karte konnte nicht geladen werden. Lege diese <b>index.html</b> neben <b>Lagekarte.png</b> ab. Achte auf die genaue Groß- und Kleinschreibung.</div></div><div class="hint">Palette antippen → hinzufügen · Objekt ziehen → verschieben · Kartenhintergrund zum Scrollen verwenden · Objekte außerhalb des Ausschnitts bleiben gespeichert</div><div id="status" class="status" role="status" aria-live="polite">Lokal gespeichert wird ausschließlich auf diesem Gerät in diesem Browser.</div></section>
+<aside aria-label="Objektpalette und Bearbeitung"><div class="tabs" role="tablist" aria-label="Palette"><button id="vehicles" role="tab" aria-selected="true" aria-controls="palette">🚒 Fahrzeuge</button><button id="symbols" role="tab" aria-selected="false" aria-controls="palette" tabindex="-1">◉ Taktische Zeichen</button></div><div class="empty-note">Antippen oder mit der Maus auf die Karte ziehen.</div><div id="palette" class="palette" role="tabpanel" aria-labelledby="vehicles"></div><section class="editor"><h2 id="selection">Kein Objekt ausgewählt</h2><fieldset id="fields" disabled><label for="label">Beschriftung</label><input id="label" maxlength="100" placeholder="z. B. Florian 1/46/1" autocomplete="off"><div class="controls"><button data-action="left">↶ −15°</button><button data-action="right">↷ +15°</button><button data-action="smaller">− Kleiner</button><button data-action="larger">+ Größer</button><button data-action="duplicate">Duplizieren</button><button data-action="delete" class="danger">Löschen</button></div></fieldset><p class="hint" id="details">Ein Objekt auf der Karte antippen.</p></section><footer>Taktische Zeichen: vereinfachte Übungsdarstellung.</footer></aside></main>
+<nav id="mapnav" class="map-navigation" aria-label="Lagekarten auswählen"><span>Lagekarten</span></nav>
+<script>
+'use strict';
+const VEHICLES=['ADAC','Drehleiter','DRF','ELW_RD','ELW_FFW','GW-L','HLF20','KTW','LF20','MZF','NEF','POL','RTW'];
+const VEHICLE_GROUPS=[{"name":"Rettungsdienst","color":"#b87912","keys":["RTW","KTW","NEF","ELW_RD"]},{"name":"Feuerwehr","color":"#b63b36","keys":["ELW_FFW","HLF20","LF20","Drehleiter","GW-L","MZF"]},{"name":"Polizei","color":"#24689c","keys":["POL"]},{"name":"Luftrettungsmittel","color":"#657242","keys":["ADAC","DRF"]}];
+const SYMBOLS=[['EL','Einsatzleitung'],['BR','Bereitstellungsraum'],['RMHP','Rettungsmittelhalteplatz'],['PA','Patientenablage'],['AL','Abschnittsleitung'],['danger','Gefahrstelle'],['water','Wasserentnahmestelle'],['barrier','Sperrpunkt'],['heli','Hubschrauberlandeplatz'],['assembly','Sammelstelle']];
+// Calibrated for Sandra’s three supplied PNG maps (October 2026).
+// Normalized standard-map coordinates are the common reference for all objects.
+// Replacing maps with different crops requires updating these transformations.
+const MAP_VIEWS=[{id:'overview',name:'Übersicht',file:'Lagekarte_Uebersicht.png'},{id:'standard',name:'Standard',file:'Lagekarte.png'},{id:'detail',name:'Detail',file:'Lagekarte_Detail.png'}];
+const MAP_TRANSFORMS={
+  "standard": {
+    "sx": 1,
+    "sy": 1,
+    "tx": 0,
+    "ty": 0
+  },
+  "overview": {
+    "sx": 0.5008999280057596,
+    "sy": 0.5009196811771919,
+    "tx": 0.1962742980561555,
+    "ty": 0.17259350091968118
+  },
+  "detail": {
+    "sx": 1.0057824358511023,
+    "sy": 1.0030693677102518,
+    "tx": 0.009035056017347307,
+    "ty": 0.03560466543891958
+  }
+};
+const CALIBRATION='vu-bichl-2026-10';
+let activeView='standard';
+function toMap(p,id=activeView){const t=MAP_TRANSFORMS[id];return {x:p.x*t.sx+t.tx,y:p.y*t.sy+t.ty}}
+function toWorld(p,id=activeView){const t=MAP_TRANSFORMS[id];return {x:(p.x-t.tx)/t.sx,y:(p.y-t.ty)/t.sy}}
+function isVisible(o){const p=toMap(o);return p.x>=0&&p.x<=1&&p.y>=0&&p.y<=1}
+function moveOnMap(o,x,y){Object.assign(o,toWorld({x:clamp(x,.015,.985),y:clamp(y,.015,.985)}))}
+const STORAGE='VU_Bichl.lagekarte.v3';const MAX=3000;
+const $=id=>document.getElementById(id);let objects=[],selected=null,tab='vehicle',drag=null,saveTimer=null,storageWarned=false,mapReady=false;
+const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));const uid=()=>globalThis.crypto?.randomUUID?.() || 'o'+Date.now().toString(36)+Math.random().toString(36).slice(2);
+function title(o){return o.kind==='vehicle'?o.key.replaceAll('_',' '):SYMBOLS.find(s=>s[0]===o.key)[1]}
+function symbol(key){let body='';const text=(t,size=30)=>`<text x="60" y="51" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="${size}" fill="#153d54">${t}</text>`;if(['EL','BR','RMHP','PA','AL'].includes(key)){body='<rect x="5" y="9" width="110" height="62" rx="5" fill="white" stroke="#153d54" stroke-width="4"/>'+text(key,key==='RMHP'?23:30)}else if(key==='danger'){body='<path d="M60 5L115 73H5Z" fill="#ffe28b" stroke="#802926" stroke-width="4"/>'+text('!',43)}else if(key==='water'){body='<circle cx="60" cy="40" r="35" fill="#e2f5ff" stroke="#0875aa" stroke-width="4"/><path d="M60 15C52 29 43 38 43 47a17 17 0 0034 0c0-9-9-18-17-32" fill="#0875aa"/>'}else if(key==='barrier'){body='<circle cx="60" cy="40" r="34" fill="white" stroke="#c03036" stroke-width="6"/><path d="M36 16L84 64M84 16L36 64" stroke="#c03036" stroke-width="9"/>'}else if(key==='heli'){body='<circle cx="60" cy="40" r="35" fill="#fff" stroke="#153d54" stroke-width="4"/>'+text('H',40)}else{body='<rect x="6" y="6" width="108" height="68" rx="5" fill="#21745a"/><g stroke="white" stroke-width="4" fill="none"><path d="M17 17L39 29H29M39 29V19M103 17L81 29H91M81 29V19M17 63L39 51H29M39 51V61M103 63L81 51H91M81 51V61"/></g><circle cx="60" cy="30" r="7" fill="white"/><path d="M49 58V48a11 11 0 0122 0v10" fill="white"/>'}return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" aria-hidden="true">${body}</svg>`}
+function art(o){if(o.kind==='symbol'){const s=document.createElement('span');s.innerHTML=symbol(o.key);return s.firstChild}const img=document.createElement('img');img.src='Fahrzeuge/'+o.key+'.png';img.alt='';img.draggable=false;img.onerror=()=>{img.hidden=true;const fallback=document.createElement('span');fallback.textContent=title(o);fallback.style.cssText='display:block;padding:12px;background:white;border:2px solid #153d54;border-radius:5px';img.replaceWith(fallback)};return img}
+function status(t){$('status').textContent=t}
+function payload(){return {format:'VU_Bichl-Lagekarte',version:5,calibration:CALIBRATION,savedAt:new Date().toISOString(),activeView,objects:objects.map(o=>({...o}))}}
+function renderMapNav(){
+ const label=document.createElement('span');label.textContent='Lagekarten';$('mapnav').replaceChildren(label);
+ for(const view of MAP_VIEWS){const b=document.createElement('button');b.textContent=view.name;b.setAttribute('aria-pressed',String(view.id===activeView));b.onclick=()=>switchMap(view.id);$('mapnav').append(b)}
+}
+function loadMap(){
+ mapReady=false;$('stage').hidden=true;$('maperror').hidden=false;$('maperror').textContent='Karte wird geladen …';
+ const view=MAP_VIEWS.find(v=>v.id===activeView);$('map').alt='Planspiel · '+view.name;
+ $('zoom').value='100';$('zoomvalue').value='100 %';$('stage').style.width='100%';$('viewport').scrollTop=0;$('viewport').scrollLeft=0;
+ $('map').src=view.file+'?karte='+encodeURIComponent(CALIBRATION);renderMapNav();
+}
+function switchMap(id){
+ if(id===activeView||!MAP_VIEWS.some(v=>v.id===id))return;
+ endDrag();activeView=id;if(current()&&!isVisible(current()))selected=null;render();loadMap();save();
+}
+function restoreLage(next){objects=next.objects;activeView=next.activeView;selected=null;render();loadMap()}
+function readLage(data){
+ if(!data||data.format!=='VU_Bichl-Lagekarte'||data.version!==5||data.calibration!==CALIBRATION)throw Error('Bitte eine gespeicherte Lage für „VU bei Bichl“ auswählen.');
+ if(!MAP_VIEWS.some(v=>v.id===data.activeView))throw Error('Unbekannte Kartenansicht.');
+ return {activeView:data.activeView,objects:validate(data,true)};
+}
+function save(){clearTimeout(saveTimer);try{localStorage.setItem(STORAGE,JSON.stringify(payload()));storageWarned=false;status('Automatisch lokal gespeichert · '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}))}catch(e){storageWarned=true;status('Lokales Speichern nicht möglich. Bitte sichere die Lage über „Lage speichern“.')}}
+function scheduleSave(){clearTimeout(saveTimer);saveTimer=setTimeout(save,250)}
+function current(){return objects.find(o=>o.id===selected)}
+function syncEditor(){const o=current();$('fields').disabled=!o;$('selection').textContent=o?title(o):'Kein Objekt ausgewählt';$('label').value=o?.label||'';$('details').textContent=o?`Drehung: ${o.rotation}° · Größe: ${Math.round(o.scale*100)} %`:'Ein Objekt auf der Karte antippen.';$('count').textContent=objects.filter(isVisible).length+' von '+objects.length+' Objekten im Ausschnitt'}
+function select(id){selected=id;for(const el of $('overlay').children)el.classList.toggle('selected',el.dataset.id===id);syncEditor()}
+function position(el,o){const p=toMap(o);el.style.left=p.x*100+'%';el.style.top=p.y*100+'%';el.style.width=12*o.scale*MAP_TRANSFORMS[activeView].sx+'%';el.style.setProperty('--rotation',o.rotation+'deg')}
+function render(){const f=document.createDocumentFragment();for(const o of objects){if(!isVisible(o))continue;const el=document.createElement('button');el.className='object'+(o.id===selected?' selected':'');el.dataset.id=o.id;el.setAttribute('aria-label',title(o)+(o.label?' · '+o.label:''));el.title='Auswählen und verschieben';position(el,o);const a=document.createElement('span');a.className='art';a.append(art(o));const l=document.createElement('span');l.className='object-label';l.textContent=o.label;el.append(a,l);f.append(el)}$('overlay').replaceChildren(f);syncEditor()}
+function center(){const r=$('stage').getBoundingClientRect(),v=$('viewport').getBoundingClientRect();return {x:clamp((Math.max(r.left,v.left)+Math.min(r.right,v.right))/2-r.left,0,r.width)/r.width,y:clamp((Math.max(r.top,v.top)+Math.min(r.bottom,v.bottom))/2-r.top,0,r.height)/r.height}}
+function add(kind,key,p){if(!mapReady){status('Bitte zuerst '+MAP_VIEWS.find(v=>v.id===activeView).file+' bereitstellen.');return}if(objects.length>=MAX){status('Maximal 3.000 Objekte pro Lage möglich.');return}const o={id:uid(),kind,key,...toWorld(p||center()),rotation:0,scale:.3,label:''};objects.push(o);selected=o.id;render();save()}
+const openVehicleGroups=new Set();
+function palette(){
+ for(const folder of $('palette').querySelectorAll('details[data-group]')){if(folder.open)openVehicleGroups.add(folder.dataset.group);else openVehicleGroups.delete(folder.dataset.group)}
+ const f=document.createDocumentFragment(),kind=tab;
+ function appendButton(key,name,target=f){
+  const b=document.createElement('button');b.draggable=false;b.append(art({kind,key}));
+  // Touch gestures scroll the palette; native drag-and-drop is enabled only for a mouse.
+  b.addEventListener('pointerdown',e=>{b.draggable=e.pointerType==='mouse'});
+  const l=document.createElement('span');l.textContent=name;b.append(l);
+  b.addEventListener('click',()=>add(kind,key));
+  b.addEventListener('dragstart',e=>{e.dataTransfer.setData('application/x-lagekarte',JSON.stringify({kind,key}));e.dataTransfer.effectAllowed='copy'});
+  target.append(b);
+ }
+ if(kind==='vehicle'){
+  for(const group of VEHICLE_GROUPS){
+   const folder=document.createElement('details');folder.className='vehicle-folder';folder.dataset.group=group.name;folder.open=openVehicleGroups.has(group.name);folder.style.setProperty('--group-color',group.color);
+   const heading=document.createElement('summary');heading.append(document.createTextNode('📁 '+group.name));
+   const count=document.createElement('span');count.className='folder-count';count.textContent='('+group.keys.length+')';heading.append(count);
+   const items=document.createElement('div');items.className='folder-items';
+   for(const key of group.keys)appendButton(key,key.replaceAll('_',' '),items);
+   folder.append(heading,items);f.append(folder);
+  }
+ }else{for(const [key,name] of SYMBOLS)appendButton(key,name)}
+ $('palette').replaceChildren(f);
+}
+function setTab(kind){tab=kind;for(const [id,k] of [['vehicles','vehicle'],['symbols','symbol']]){$(id).setAttribute('aria-selected',String(k===kind));$(id).tabIndex=k===kind?0:-1}$('palette').setAttribute('aria-labelledby',kind==='vehicle'?'vehicles':'symbols');palette()}
+$('vehicles').onclick=()=>setTab('vehicle');$('symbols').onclick=()=>setTab('symbol');document.querySelector('.tabs').onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();setTab(e.key==='Home'?'vehicle':e.key==='End'?'symbol':tab==='vehicle'?'symbol':'vehicle');$(tab==='vehicle'?'vehicles':'symbols').focus()}};
+$('overlay').addEventListener('pointerdown',e=>{const el=e.target.closest('.object');if(!el){select(null);return}if(e.button!==0||drag)return;const o=objects.find(o=>o.id===el.dataset.id);select(o.id);const r=$('stage').getBoundingClientRect();drag={id:o.id,pointer:e.pointerId,startX:e.clientX,startY:e.clientY,...toMap(o),width:r.width,height:r.height,el};el.setPointerCapture(e.pointerId);el.classList.add('dragging');e.preventDefault()});
+$('overlay').addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.pointer)return;const o=objects.find(o=>o.id===drag.id);moveOnMap(o,drag.x+(e.clientX-drag.startX)/drag.width,drag.y+(e.clientY-drag.startY)/drag.height);position(drag.el,o)});
+function endDrag(e){if(!drag||(e&&e.pointerId!==drag.pointer))return;drag.el.classList.remove('dragging');drag=null;save()}
+for(const event of ['pointerup','pointercancel','lostpointercapture'])$('overlay').addEventListener(event,endDrag);
+$('overlay').addEventListener('click',e=>{const el=e.target.closest('.object');if(el)select(el.dataset.id)});
+$('overlay').addEventListener('dragover',e=>{if(Array.from(e.dataTransfer.types).includes('application/x-lagekarte')){e.preventDefault();e.dataTransfer.dropEffect='copy'}});
+$('overlay').addEventListener('drop',e=>{e.preventDefault();try{const d=JSON.parse(e.dataTransfer.getData('application/x-lagekarte'));if(!validKey(d))return;const r=$('stage').getBoundingClientRect();add(d.kind,d.key,{x:clamp((e.clientX-r.left)/r.width,.015,.985),y:clamp((e.clientY-r.top)/r.height,.015,.985)})}catch{}});
+$('label').oninput=()=>{const o=current();if(!o)return;o.label=$('label').value;const el=Array.from($('overlay').children).find(el=>el.dataset.id===o.id);el.querySelector('.object-label').textContent=o.label;el.setAttribute('aria-label',title(o)+(o.label?' · '+o.label:''));scheduleSave()};
+function action(a){const o=current();if(!o)return;if(a==='left'||a==='right')o.rotation=(o.rotation+(a==='left'?-15:15)+360)%360;if(a==='smaller'||a==='larger')o.scale=clamp(Math.round((o.scale+(a==='smaller'?-.05:.05))*100)/100,.1,3);if(a==='duplicate'){if(objects.length>=MAX){status('Maximal 3.000 Objekte pro Lage möglich.');return}const p=toMap(o);const copy={...o,id:uid()};moveOnMap(copy,p.x+(p.x>.92?-.03:.03),p.y+(p.y>.92?-.03:.03));objects.push(copy);selected=copy.id}if(a==='delete'){objects=objects.filter(v=>v.id!==o.id);selected=null}render();save()}
+document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>action(b.dataset.action));
+$('overlay').onkeydown=e=>{const o=current();if(!o)return;if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();action('delete')}else if(e.key.startsWith('Arrow')){e.preventDefault();const step=e.shiftKey?.02:.005;const p=toMap(o);moveOnMap(o,p.x+(e.key==='ArrowRight'?step:e.key==='ArrowLeft'?-step:0),p.y+(e.key==='ArrowDown'?step:e.key==='ArrowUp'?-step:0));position(e.target.closest('.object'),o);scheduleSave()}};
+$('zoom').oninput=()=>{$('stage').style.width=$('zoom').value+'%';$('zoomvalue').value=$('zoom').value+' %'};
+$('reset').onclick=()=>{if(!objects.length)return;if(confirm('Die gemeinsame Lage mit allen Fahrzeugen und Zeichen löschen? Die Änderung gilt für alle Ansichten.')){objects=[];selected=null;render();save()}};
+$('export').onclick=()=>{save();const blob=new Blob([JSON.stringify(payload(),null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Planspiel_VU_Bichl_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);status('JSON-Datei zum Speichern bereitgestellt. Auf dem iPad ggf. „In Dateien sichern“ wählen.')};
+function validKey(o){return o&&((o.kind==='vehicle'&&VEHICLES.includes(o.key))||(o.kind==='symbol'&&SYMBOLS.some(s=>s[0]===o.key)))}
+function validCoordinates(o,world){const p=world?toMap(o,'overview'):o;return p.x>=-1e-8&&p.x<=1+1e-8&&p.y>=-1e-8&&p.y<=1+1e-8}
+function validate(data,world=false){if(!data||data.format!=='VU_Bichl-Lagekarte'||data.version!==(world?5:3)||!Array.isArray(data.objects)||data.objects.length>MAX)throw Error('Keine gültige Lagedatei.');return data.objects.map(o=>{if(!validKey(o)||!['x','y','scale','rotation'].every(k=>typeof o[k]==='number'&&Number.isFinite(o[k]))||!validCoordinates(o,world)||o.scale<.1||o.scale>3||typeof o.label!=='string'||o.label.length>100)throw Error('Die Datei enthält ungültige Objektdaten.');return {id:uid(),kind:o.kind,key:o.key,x:o.x,y:o.y,scale:o.scale,rotation:((o.rotation%360)+360)%360,label:o.label}})}
+$('import').onclick=()=>$('file').click();$('file').onchange=async()=>{const file=$('file').files[0];$('file').value='';if(!file)return;try{if(file.size>5*1024*1024)throw Error('Die Datei ist zu groß (maximal 5 MB).');const next=readLage(JSON.parse(await file.text()));if(objects.length&&!confirm('Die Datei ersetzt die gemeinsame Lage in allen Ansichten. Fortfahren?'))return;restoreLage(next);save();if(!storageWarned)status('Gemeinsame Lage geladen · automatisch lokal gespeichert.')}catch(e){alert('Import nicht möglich: '+e.message)}};
+$('map').onload=()=>{mapReady=true;$('stage').hidden=false;$('maperror').hidden=true};
+$('map').onerror=()=>{mapReady=false;$('stage').hidden=true;$('maperror').hidden=false;const view=MAP_VIEWS.find(v=>v.id===activeView);$('maperror').textContent='Für „'+view.name+'“ fehlt noch das Kartenbild. Lade '+view.file+' ins Hauptverzeichnis deines GitHub-Projekts, direkt neben index.html. Danach die Seite neu laden. Die anderen Ansichten bleiben nutzbar.'};
+let restored=false;
+try{const stored=localStorage.getItem(STORAGE);if(stored){restoreLage(readLage(JSON.parse(stored)));restored=true;status('Gemeinsame Lage wiederhergestellt.')}}catch(e){status('Lokale Lage konnte nicht gelesen werden. Eine vorhandene JSON-Sicherung kann geladen werden.')}
+if(!restored)loadMap();
+window.addEventListener('pagehide',save);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')save()});palette();render();
+</script>
+</body>
+</html>
